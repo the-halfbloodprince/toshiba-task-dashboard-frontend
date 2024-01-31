@@ -1,6 +1,6 @@
 .appLayout {
   width: 100%;
-  background: green;
+  // background: var(--off);
   height: 100svh;
   padding: var(--gap);
   
@@ -36,7 +36,6 @@
 
     display: grid;
     gap: var(--gap);
-    background: #000;
     grid-template-columns: repeat(8, 1fr);
 
     transition: all .5s ease;
