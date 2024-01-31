@@ -1,4 +1,56 @@
 .appLayout {
   width: 100%;
+  background: green;
   height: 100svh;
+  padding: var(--gap);
+  
+  display: grid;
+  // grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(3, 7ch) 1fr;
+  gap: var(--gap);
+  
+  aside {
+    background: red;
+    border-radius: 10px;
+    transition: all .5s ease;
+  }
+
+  aside[data-open=false] {
+    grid-column: 1 / 2;
+
+    & + main {
+      grid-column: 2 / -1;
+    }
+  }
+
+  aside[data-open=true] {
+    grid-column: 1 / 4;
+
+    & + main {
+      grid-column: 4 / -1;
+    }
+  }
+
+  main {
+    width: 100%;
+
+    display: grid;
+    gap: var(--gap);
+    background: #000;
+    grid-template-columns: repeat(8, 1fr);
+
+    transition: all .5s ease;
+    
+    .textVisualizationCard:first-child {
+      grid-column: 1 / 4;
+    }
+
+    .textVisualizationCard:nth-child(2) {
+      grid-column: 4 / 7;
+    }
+
+    .meterVisualizationCard {
+      grid-column: 7 / 9;
+    }
+  }
 }
