@@ -1,3 +1,3 @@
 import { createContext } from "react";
 
-export const sideBarExpandedContext = createContext<any>([])
+export const sideBarExpandedContext = createContext({sidebarExpanded: true, toggleSidebarExpanded: () => {}})
