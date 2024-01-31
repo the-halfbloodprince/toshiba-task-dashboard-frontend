@@ -11,7 +11,7 @@ const SideBar: FC<Props> = ({ toggleSidebar }) => {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <Image src='/Logo_Expanded.svg' alt='Logo' width={180} height={40} />
+        <Image src='/Logo_Expanded.svg' alt='Logo' width={130} height={100} />
       </div>
     </div>
   )
