@@ -7,10 +7,19 @@
   padding: 1.2rem;
   border-radius: var(--borderRadius);
   
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
   background: var(--white);
-
+  
   @media screen and (max-width: screenSizes.$xl) {
     border-radius: 0;
+  }
+  
+  &[data-expanded=false] {
+    align-items: center;
+    padding: .7rem;
   }
 
   .expandIcon {
@@ -24,6 +33,95 @@
 
     &[data-flipped=true] {
       rotate: 180deg;
+    }
+  }
+
+  .primary_section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .searchbar {
+      border: 2px solid var(--lightGray);
+      border-radius: 2rem;
+      display: flex;
+      gap: 1rem;
+      padding: .4rem .8rem;
+
+      color: var(--midGray);
+
+      img {
+        height: 1.3rem;
+        aspect-ratio: 1;
+      }
+
+      &[data-expanded=false] {
+        padding: .6rem;
+        border-radius: 50%;
+        aspect-ratio: 1;
+        display: grid;
+        place-items: center;
+      }
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+    }
+  }
+
+  .secondary_section {
+
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+
+    .profile {
+      padding: 0 1rem;
+      display: flex;
+      gap: .6rem;
+      align-items: center;
+      letter-spacing: -25%;
+
+      &[data-expanded=false] {
+        padding: 0.2rem;
+
+        img {
+          width: 2rem;
+          height: 2rem;
+          aspect-ratio: 1;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+
+      img {
+        width: 2.2rem;
+        height: 2.2rem;
+        // aspect-ratio: 1;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        gap: .2rem;
+
+        .name {
+          font-size: 1em;
+          font-weight: 500;
+        }
+
+        .badge {
+          font-size: .7em;
+          background: var(--midOrange);
+          width: fit-content;
+          padding: .1rem .8rem;
+          border-radius: 2rem;
+        }
+      }
     }
   }
 }

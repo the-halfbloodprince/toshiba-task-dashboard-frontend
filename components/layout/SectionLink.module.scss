@@ -1,0 +1,37 @@
+.sectionLink {
+  display: flex;
+  gap: .8rem;
+  letter-spacing: -25%;
+  font-size: 1rem;
+  padding: .5rem 1rem;
+  cursor: pointer;
+
+  img {
+    width: 1.2rem;
+    aspect-ratio: 1;
+  }
+
+  &:hover {
+    color: var(--orange);
+    background: var(--lightOrange);
+  }
+
+  // border-radius: 2rem;
+  // display: flex;
+  // gap: 1rem;
+  // padding: .4rem .8rem;
+  
+  img {
+    height: 1.3rem;
+    aspect-ratio: 1;
+  }
+  
+  &[data-expanded=false] {
+    // border: 2px solid var(--lightGray);
+    padding: .6rem;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+  }
+}

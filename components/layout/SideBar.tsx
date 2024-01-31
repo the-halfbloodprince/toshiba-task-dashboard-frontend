@@ -65,13 +65,14 @@ const SideBar: FC<Props> = () => {
   const { sidebarExpanded, toggleSidebarExpanded } = useContext(sideBarExpandedContext)
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-expanded={sidebarExpanded}>
       <ExpandIcon onClick={toggleSidebarExpanded} className={styles.expandIcon} data-flipped={sidebarExpanded} />
       
       <div className={styles.primary_section}>
         <Logo variant={sidebarExpanded ? 'large' : 'small'} />
-        <div className={styles.searchbar}>
-          Search
+        <div className={styles.searchbar} data-expanded={sidebarExpanded}>
+          <Image src='/icons/search.svg' alt='search-icon' width={20} height={20} />
+          { sidebarExpanded && <p>Search</p> }
         </div>
         <div className={styles.links}>
           { primarySectionLinks.map((link, idx) => <SectionLink key={idx} linkDetails={link} />) }
@@ -79,12 +80,18 @@ const SideBar: FC<Props> = () => {
       </div>
 
       <div className={styles.secondary_section}>
-        <div>
-          <Image src="/images/profile-pic.png" alt="Profile pic" width={40} height={40} />
-          <div>
-            <div className={styles.name}>Gustavo Xavier</div>
-            <div className={styles.badge}>Admin</div>
-          </div>
+        <div className={styles.profile} data-expanded={sidebarExpanded}>
+          <Image 
+            src="/images/profile_pic.webp" 
+            alt="Profile pic" 
+            width={40} height={40} 
+          />
+          { sidebarExpanded && (
+            <div className={styles.info}>
+              <div className={styles.name}>Gustavo Xavier</div>
+              <div className={styles.badge}>Admin</div>
+            </div>
+          ) }
         </div>
         { secondarySectionLinks.map((link, idx) => <SectionLink key={idx} linkDetails={link} />) }
       </div>

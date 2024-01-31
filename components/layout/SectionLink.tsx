@@ -1,4 +1,7 @@
-import React, { FC } from 'react'
+import Image from 'next/image';
+import React, { FC, useContext } from 'react'
+import styles from './SectionLink.module.scss'
+import { sideBarExpandedContext } from '@/contexts/sidebarExpandedContext';
 
 export type LinkDetails = {
   name: string;
@@ -11,9 +14,21 @@ type Props = {
   linkDetails: LinkDetails
 }
 
-const SectionLink: FC<Props> = () => {
+const SectionLink: FC<Props> = ({ linkDetails }) => {
+
+  const { sidebarExpanded } = useContext(sideBarExpandedContext)
+
   return (
-    <div>Link</div>
+    <div className={styles.sectionLink} data-expanded={sidebarExpanded}>
+      <Image 
+        src={linkDetails.iconSrc}
+        alt={linkDetails.name}
+        width={30} 
+        height={30} 
+      />
+
+      { sidebarExpanded && <p>{linkDetails.name}</p>}
+    </div>
   )
 }
 
