@@ -27,7 +27,7 @@
 
   /* spacing variables */
   --borderRadius: 16px;
-  --gap: 1.2rem;
+  --gap: 1rem;
 
 }
 
@@ -43,12 +43,18 @@
   }
 } */
 
+html {
+  font-size: 14px;
+}
+
 body {
   margin: 0;
   padding: 0;
 
   color: var(--textClr);
   background: var(--bodyBgClr);
+
+  // overflow-y: hidden;
 }
 
 * {

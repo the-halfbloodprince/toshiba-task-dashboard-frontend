@@ -12,6 +12,11 @@ import { sideBarExpandedContext } from '@/contexts/sidebarExpandedContext';
 import Customers from "@/components/dashboard/Customers";
 import Chats from "@/components/dashboard/Chats";
 import TopStates from "@/components/dashboard/TopStates";
+import NewDeals from "@/components/dashboard/NewDeals";
+import TopMonth from "@/components/dashboard/TopMonth";
+import TopYear from "@/components/dashboard/TopYear";
+import TopBuyer from "@/components/dashboard/TopBuyer";
+import GrowthChart from "@/components/dashboard/GrowthChart";
 // import SidebarContextProvider, { sideBarExpandedContext } from "@/contexts/sidebarExpandedContext";
 
 export default function Home() {
@@ -71,9 +76,21 @@ export default function Home() {
             <Customers />
           </div>
           {/* growth chart card */}
+          <div className={styles.growthChartCard}>
+            <GrowthChart />
+          </div>
           {/* top month card */}
+          <div className={styles.topMonthCard}>
+            <TopMonth />
+          </div>
           {/* top year card */}
+          <div className={styles.topYearCard}>
+            <TopYear />
+          </div>
           {/* top buyer card */}
+          <div className={styles.topBuyerCard}>
+            <TopBuyer />
+          </div>
 
           {/* chats card */}
           <div className={styles.chatsCard}>
@@ -84,6 +101,9 @@ export default function Home() {
             <TopStates />
           </div>
           {/* new deals card */}
+          <div className={styles.newDealsCard}>
+            <NewDeals />
+          </div>
         </main>
       </div>
     </sideBarExpandedContext.Provider>

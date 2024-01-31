@@ -29,10 +29,17 @@
     right: 0;
     translate: 50%;
     color: var(--darkOrange);
-    opacity: .2;
+    opacity: .5;
+    cursor: pointer;
 
     &[data-flipped=true] {
       rotate: 180deg;
+    }
+
+    display: none;
+
+    @media screen and (min-width: screenSizes.$xl) {
+      display: block;
     }
   }
 

@@ -1,0 +1,17 @@
+.container {
+  background: var(--white);
+  padding: 1rem .6rem;
+  border-radius: var(--borderRadius);
+
+  h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .deals {
+    display: flex;
+    gap: .7rem;
+    flex-wrap: wrap;
+  }
+}
