@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+
+  p:first-child {
+    font-weight: 700;
+  }
+
+  background: var(--barLinearGradient);
+  // width: ;
+}

@@ -20,7 +20,11 @@ const SectionLink: FC<Props> = ({ linkDetails }) => {
   const { sidebarExpanded } = useContext(sideBarExpandedContext)
 
   return (
-    <div className={styles.sectionLink} data-expanded={sidebarExpanded}>
+    <div 
+      className={styles.sectionLink} 
+      data-danger={linkDetails.danger ? true : false} 
+      data-expanded={sidebarExpanded}
+    >
       <div className={styles.title}>
         <Image 
           src={linkDetails.iconSrc}

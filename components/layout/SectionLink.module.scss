@@ -7,13 +7,20 @@
   cursor: pointer;
   justify-content: space-between;
   align-items: center;
+
+  &[data-danger=true] {
+    color: red;
+  }
   
   .title {
     display: flex;
+    font-weight: 500;
+    align-items: center;
     gap: .8rem;
   }
 
   img {
+    color: red;
     width: 1.2rem;
     aspect-ratio: 1;
   }

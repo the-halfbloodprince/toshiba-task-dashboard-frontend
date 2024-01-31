@@ -10,6 +10,8 @@ import { MdClose as CloseIcon } from 'react-icons/md'
 import Logo from "@/components/layout/Logo";
 import { sideBarExpandedContext } from '@/contexts/sidebarExpandedContext';
 import Customers from "@/components/dashboard/Customers";
+import Chats from "@/components/dashboard/Chats";
+import TopStates from "@/components/dashboard/TopStates";
 // import SidebarContextProvider, { sideBarExpandedContext } from "@/contexts/sidebarExpandedContext";
 
 export default function Home() {
@@ -74,7 +76,13 @@ export default function Home() {
           {/* top buyer card */}
 
           {/* chats card */}
+          <div className={styles.chatsCard}>
+            <Chats />
+          </div>
           {/* top states card */}
+          <div className={styles.topStatesCard}>
+            <TopStates />
+          </div>
           {/* new deals card */}
         </main>
       </div>

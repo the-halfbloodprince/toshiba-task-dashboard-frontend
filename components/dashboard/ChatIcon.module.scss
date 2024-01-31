@@ -1,0 +1,39 @@
+.container {
+  width: 6rem;
+  height: 6rem;
+  position: relative;
+
+  // background: red;
+  border-radius: 20px;
+
+  display: grid;
+  place-items: center;
+
+  img {
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .unreadMessageIndicator {
+    position: absolute;
+    display: none;
+  }
+
+  &[data-unread-notifications-present=true] {
+    background: var(--lightOrange);
+    position: relative;
+
+    .unreadMessageIndicator {
+      display: block;
+      width: 1rem;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: red;
+
+      top: 25%;
+      right: 5%;
+    }
+  }
+}
