@@ -1,3 +1,5 @@
+@use "@/utils/screenSizes" as screenSizes;
+
 /* optional - to be used with tailwind */
 /* we won't be using tailwind for this task to keep the styles clearly organized */
 @tailwind base;
@@ -24,6 +26,7 @@
   /* spacing variables */
   --borderRadius: 16px;
   --gap: 1.2rem;
+
 }
 
 :root {

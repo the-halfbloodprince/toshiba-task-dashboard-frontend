@@ -1,17 +1,20 @@
 import React, { FC } from 'react'
 import styles from './SideBar.module.scss'
 import Image from 'next/image'
+import Logo from './Logo';
 
 type Props = {
   toggleSidebar: () => void;
   expanded: Boolean;
 }
 
-const SideBar: FC<Props> = ({ toggleSidebar }) => {
+const SideBar: FC<Props> = ({ toggleSidebar, expanded }) => {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <Image src='/Logo_Expanded.svg' alt='Logo' width={130} height={100} />
+        <div onClick={toggleSidebar}>
+          <Logo variant={expanded ? 'large' : 'small'} />
+        </div>
       </div>
     </div>
   )

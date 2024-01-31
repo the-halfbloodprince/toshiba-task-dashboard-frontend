@@ -1,8 +1,14 @@
+@use "@/utils/screenSizes" as screenSizes;
+
 .container {
   width: 100%;
   height: 100%;
   padding: 1.2rem;
   border-radius: var(--borderRadius);
-
+  
   background: var(--white);
+
+  @media screen and (max-width: screenSizes.$xl) {
+    border-radius: 0;
+  }
 }
