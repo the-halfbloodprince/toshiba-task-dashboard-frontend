@@ -1,10 +1,17 @@
 .sectionLink {
   display: flex;
-  gap: .8rem;
+  // gap: .8rem;
   letter-spacing: -25%;
   font-size: 1rem;
   padding: .5rem 1rem;
   cursor: pointer;
+  justify-content: space-between;
+  align-items: center;
+  
+  .title {
+    display: flex;
+    gap: .8rem;
+  }
 
   img {
     width: 1.2rem;
@@ -33,5 +40,9 @@
     aspect-ratio: 1;
     display: grid;
     place-items: center;
+
+    .expandableIcon {
+      display: none;
+    }
   }
 }

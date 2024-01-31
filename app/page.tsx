@@ -1,7 +1,7 @@
 "use client"
 import TextVisualizationCard from "@/components/dashboard/TextVisualizationCard";
 import SideBar from "@/components/layout/SideBar";
-
+import { MdOutlineArrowOutward as IncreaseIcon } from "react-icons/md";
 import styles from '@/app/layout.module.scss';
 import MeterVisualizationCard from "@/components/dashboard/MeterVisualizationCard";
 import { createContext, useContext, useState } from "react";
@@ -32,9 +32,27 @@ export default function Home() {
           <SideBar />
         </aside>
         <main>
-          <div className={styles.textVisualizationCard}><TextVisualizationCard /></div>
-          <div className={styles.textVisualizationCard}><TextVisualizationCard /></div>
-          <div className={styles.meterVisualizationCard}><MeterVisualizationCard /></div>
+          <div className={styles.textVisualizationCard}>
+            <TextVisualizationCard
+              title = "Revenues"
+              heading1 = "15%"
+              icon = {<IncreaseIcon color="#25CD25" />}
+              description = "Increase compared to last week"
+              linkText = "Revenues report"
+            />
+          </div>
+          <div className={styles.textVisualizationCard}>
+            <TextVisualizationCard
+              title = "Lost Deals"
+              heading1 = "4%"
+              // icon = {<IncreaseIcon color="#25CD25" />}
+              description = "You closed 96 out of 100 deals"
+              linkText = "All deals"
+            />
+          </div>
+          <div className={styles.meterVisualizationCard}>
+            <MeterVisualizationCard />
+          </div>
 
           {/* customers card */}
           {/* growth chart card */}

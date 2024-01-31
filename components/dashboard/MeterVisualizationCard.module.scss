@@ -1,8 +1,16 @@
 .container {
   width: 100%;
-  height: 100%;
+  height: 18rem;
+  aspect-ratio: 1;
   padding: 1.2rem;
 
   background: var(--white);
   border-radius: var(--borderRadius);
+
+  .title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
 }

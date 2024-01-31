@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styles from './MeterVisualizationCard.module.scss'
 
-type Props = {}
+type Props = {
+  text: string;
+  percentage: number;
+  linkText: string;
+}
 
-const MeterVisualizationCard = (props: Props) => {
+const MeterVisualizationCard: FC<Props> = ({ text, percentage, linkText }) => {
   return (
-    <div className={styles.container}>MeterVisualization</div>
+    <div className={styles.container}></div>
   )
 }
 

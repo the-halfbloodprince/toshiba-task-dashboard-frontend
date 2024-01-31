@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React, { FC, useContext } from 'react'
 import styles from './SectionLink.module.scss'
 import { sideBarExpandedContext } from '@/contexts/sidebarExpandedContext';
+import { MdKeyboardArrowDown as ArrowDownIcon } from "react-icons/md";
 
 export type LinkDetails = {
   name: string;
@@ -20,14 +21,17 @@ const SectionLink: FC<Props> = ({ linkDetails }) => {
 
   return (
     <div className={styles.sectionLink} data-expanded={sidebarExpanded}>
-      <Image 
-        src={linkDetails.iconSrc}
-        alt={linkDetails.name}
-        width={30} 
-        height={30} 
-      />
+      <div className={styles.title}>
+        <Image 
+          src={linkDetails.iconSrc}
+          alt={linkDetails.name}
+          width={30} 
+          height={30} 
+        />
 
-      { sidebarExpanded && <p>{linkDetails.name}</p>}
+        { sidebarExpanded && <p>{linkDetails.name}</p>}
+      </div>
+      <div className={styles.expandableIcon}>{linkDetails.expandable && <ArrowDownIcon />}</div>
     </div>
   )
 }
