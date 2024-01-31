@@ -51,7 +51,11 @@ export default function Home() {
             />
           </div>
           <div className={styles.meterVisualizationCard}>
-            <MeterVisualizationCard />
+            <MeterVisualizationCard
+              text = "Quarter Goal"
+              percentage = {84}
+              linkText="All Goals"
+            />
           </div>
 
           {/* customers card */}
