@@ -8,12 +8,12 @@ import { useState } from "react";
 
 export default function Home() {
 
-  const [sidebarOpen, setSidebarOpen] = useState(true)
+  const [sidebarExpanded, setSidebarExpanded] = useState(true)
 
   return (
     <div className={styles.appLayout}>
-      <aside data-open={sidebarOpen}>
-        <SideBar toggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
+      <aside data-expanded={sidebarExpanded}>
+        <SideBar toggleSidebar={() => setSidebarExpanded(!sidebarExpanded)} expanded={sidebarExpanded} />
       </aside>
       <main>
         <div className={styles.textVisualizationCard}><TextVisualizationCard /></div>

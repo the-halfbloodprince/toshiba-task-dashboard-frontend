@@ -6,16 +6,14 @@
   
   display: grid;
   // grid-template-columns: repeat(12, 1fr);
-  grid-template-columns: repeat(3, 7ch) 1fr;
+  grid-template-columns: repeat(6, 3ch) 1fr;
   gap: var(--gap);
   
   aside {
-    background: red;
-    border-radius: 10px;
     transition: all .5s ease;
   }
 
-  aside[data-open=false] {
+  aside[data-expanded=false] {
     grid-column: 1 / 2;
 
     & + main {
@@ -23,11 +21,11 @@
     }
   }
 
-  aside[data-open=true] {
-    grid-column: 1 / 4;
+  aside[data-expanded=true] {
+    grid-column: 1 / 6;
 
     & + main {
-      grid-column: 4 / -1;
+      grid-column: 6 / -1;
     }
   }
 
