@@ -9,6 +9,7 @@ import { HiMenuAlt3 as MenuIcon } from 'react-icons/hi'
 import { MdClose as CloseIcon } from 'react-icons/md'
 import Logo from "@/components/layout/Logo";
 import { sideBarExpandedContext } from '@/contexts/sidebarExpandedContext';
+import Customers from "@/components/dashboard/Customers";
 // import SidebarContextProvider, { sideBarExpandedContext } from "@/contexts/sidebarExpandedContext";
 
 export default function Home() {
@@ -32,6 +33,7 @@ export default function Home() {
           <SideBar />
         </aside>
         <main>
+          {/* Revenues Card */}
           <div className={styles.textVisualizationCard}>
             <TextVisualizationCard
               title = "Revenues"
@@ -39,8 +41,10 @@ export default function Home() {
               icon = {<IncreaseIcon color="#25CD25" />}
               description = "Increase compared to last week"
               linkText = "Revenues report"
-            />
+              />
           </div>
+          
+          {/* Lost Deals Card */}
           <div className={styles.textVisualizationCard}>
             <TextVisualizationCard
               title = "Lost Deals"
@@ -50,6 +54,8 @@ export default function Home() {
               linkText = "All deals"
             />
           </div>
+
+          {/* Quarter Goal Card */}
           <div className={styles.meterVisualizationCard}>
             <MeterVisualizationCard
               text = "Quarter Goal"
@@ -59,6 +65,9 @@ export default function Home() {
           </div>
 
           {/* customers card */}
+          <div className={styles.customersCard}>
+            <Customers />
+          </div>
           {/* growth chart card */}
           {/* top month card */}
           {/* top year card */}

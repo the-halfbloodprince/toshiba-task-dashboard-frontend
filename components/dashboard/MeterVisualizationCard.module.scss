@@ -1,6 +1,7 @@
 .container {
   width: 100%;
-  height: 17rem;
+  height: 100%;
+  // height: 17rem;
   aspect-ratio: 1;
   padding: 1.2rem;
 
@@ -12,5 +13,16 @@
     font-weight: 600;
     margin-bottom: 1rem;
     text-align: center;
+  }
+
+  .link {
+    display: flex;
+    gap: .5rem;
+    font-size: 1rem;
+    letter-spacing: -25%;
+    font-weight: 500;
+    align-items: center;
+    color: var(--darkOrange);
+    cursor: pointer;
   }
 }

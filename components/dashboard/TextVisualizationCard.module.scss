@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  height: 17rem;
+  height: 100%;
   padding: 1.2rem 2rem;
 
   background: var(--white);
@@ -11,10 +11,18 @@
   .title {
     font-size: 1.2rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: .6rem;
   }
 
+  // .content {
+  //   display: flex;
+  //   background: yellow;
+  //   flex-direction: column;
+  //   justify-content: space-between;
+  // }
+
   .group_1 {
+    flex-grow: 2;
     .group_2 {
       display: flex;
       align-items: center;
@@ -35,14 +43,14 @@
       color: var(--darkGray);
     }
 
-    margin-bottom: 4rem;
-
   }
   
   .link {
     display: flex;
     gap: .5rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    letter-spacing: -25%;
+    font-weight: 500;
     align-items: center;
     color: var(--darkOrange);
     cursor: pointer;

@@ -14,17 +14,22 @@ const VisualizationCard: FC<Props> = ({ title, description, heading1, linkText, 
   return (
     <div className={styles.container}>
       <h3 className={styles.title}>{title}</h3>
-      <div className={styles.group_1}>
-        <div className={styles.group_2}>
-          <h2 className={styles.heading}>{heading1}</h2>
-          <div className={styles.icon}>{icon}</div>
+      {/* <div className={styles.content}> */}
+        {/* main text */}
+        <div className={styles.group_1}>
+          <div className={styles.group_2}>
+            <h2 className={styles.heading}>{heading1}</h2>
+            <div className={styles.icon}>{icon}</div>
+          </div>
+          <p>{description}</p>
         </div>
-        <p>{description}</p>
-      </div>
-      <div className={styles.link}>
-        <div className={styles.linkText}>{linkText}</div>
-        <RightArrowIcon />
-      </div>
+
+        {/* link */}
+        <div className={styles.link}>
+          <div className={styles.linkText}>{linkText}</div>
+          <RightArrowIcon />
+        </div>
+      {/* </div> */}
     </div>
   )
 }

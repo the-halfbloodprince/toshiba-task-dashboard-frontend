@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+
+  padding: .6rem 1.2rem;
+  border-radius: var(--borderRadius);
+
+  justify-content: space-between;
+  align-items: center;
+
+  &:hover {
+    background: var(--lightOrange);
+  }
+
+  cursor: pointer;
+
+  .left {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    img {
+      // width: 100%;
+      width: 2.1rem;
+      height: 2.1rem;
+      border-radius: 50%;
+    }
+  
+    .customerInfo {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0;
+
+      p:first-child {
+        font-weight: 600;
+      }
+
+      p:nth-child(2) {
+        color: var(--darkGray);
+        font-size: .8rem;
+      }
+    }
+  }
+
+  .tools {
+    display: flex;
+    gap: 2rem;
+
+    align-items: center;
+
+    img {
+      width: 1.3rem;
+      height: 1.3rem;
+      
+    }
+  }
+
+}
