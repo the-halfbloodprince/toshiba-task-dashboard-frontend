@@ -1,33 +1,48 @@
+/* optional - to be used with tailwind */
+/* we won't be using tailwind for this task to keep the styles clearly organized */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* colours */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --white: #fff;
+  --black: #131313;
+  --midGray: #7D7D7D;
+  --darkOrange: #734A00;
+  --orange: #FFA500;
+  --lightGray: #F1F1F1;
+  --lightOrange: #FFF7E8;
+  --darkGray: #454545;
+  --offWhite: #F6F6F3;
+  --lightGreen: #25CD25;
+  --darkRed: #B01212;
+  --red: #EB5050;
+  --midOrange: #FFCD71;
+  --green: #008000;
+
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+:root {
+  --bodyBgClr: var(--offWhite);
+  --textClr: var(--black);
 }
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --bgClr: var(--black);
+    --textClr: var(--offWhite);
+  }
+} */
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  margin: 0;
+  padding: 0;
+
+  color: var(--textClr);
+  background: var(--bgClr);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+* {
+  box-sizing: border-box;
 }
