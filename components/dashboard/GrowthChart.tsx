@@ -36,15 +36,6 @@ const GrowthChart: FC<Props> = ({}) => {
         }
       },
       colors: ['#25CD25'],
-      fill: {
-        type: 'gradient',
-        gradient: {
-          shadeIntensity: 1,
-          opacityFrom: 0.7,
-          opacityTo: 0.9,
-          stops: [0, 90, 100]
-        }
-      },
       stroke: {
         curve: 'straight',
         width: 2,
