@@ -13,7 +13,7 @@ const Chats: FC<Props> = () => {
 
       {/* using the customers list to just show them only here */}
       <div className={styles.chatIcons}>
-        { customers.slice(0, 6).map(customer => 
+        { customers.slice(0, 4).map(customer => 
             <ChatIcon 
               key={customer.id}
               customerDetails={customer} 
