@@ -34,18 +34,15 @@
     justify-content: flex-end;
 
     h1 {
-      font-size: 1.1rem;
+      font-size: 1rem;
       text-overflow: ellipsis;
       font-weight: 600;
-      // font-size: 3rem;
-      // font-weight: 600;
-      // line-height: .9em;
-      // color: var(--darkOrange);
     }
 
     p {
-      // font-size: 2rem;
-      // color: var(--orange);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
   }
 }

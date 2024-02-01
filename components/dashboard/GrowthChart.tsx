@@ -80,7 +80,7 @@ const GrowthChart: FC<Props> = ({}) => {
         enabled: false
       },
       markers: {
-        size: 0
+        size: 0,
       },
       xaxis: {
         type: 'datetime',
