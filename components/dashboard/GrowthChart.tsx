@@ -1,9 +1,12 @@
+"use client"
 import React, { FC, useEffect, useState } from 'react'
 import { MdArrowRightAlt as RightArrowIcon } from "react-icons/md";
 import { MdKeyboardArrowDown as ArrowDownIcon } from "react-icons/md";
-import ReactApexChart from 'react-apexcharts'
 import styles from './GrowthChart.module.scss'
 import { ApexOptions } from 'apexcharts';
+import dynamic from 'next/dynamic'
+
+const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
 type Props = {}
 
@@ -33,6 +36,15 @@ const GrowthChart: FC<Props> = ({}) => {
         }
       },
       colors: ['#25CD25'],
+      fill: {
+        type: 'gradient',
+        gradient: {
+          shadeIntensity: 1,
+          opacityFrom: 0.7,
+          opacityTo: 0.9,
+          stops: [0, 90, 100]
+        }
+      },
       stroke: {
         curve: 'straight',
         width: 2,
@@ -89,15 +101,6 @@ const GrowthChart: FC<Props> = ({}) => {
           format: 'dd MMM yyyy'
         }
       },
-      fill: {
-        // type: 'gradient',
-        // gradient: {
-        //   shadeIntensity: 1,
-        //   opacityFrom: 0.7,
-        //   opacityTo: 0.9,
-        //   stops: [0, 100]
-        // }
-      },
     }
 
   // const selection = 'one_year'
@@ -109,7 +112,11 @@ const GrowthChart: FC<Props> = ({}) => {
         <p>Yearly <ArrowDownIcon /></p>
       </div>
       <div className={styles.chartArea}>
-        <ReactApexChart options={options} series={[{ data: dataSeries }]} />
+        {/* I'm having to do this check because thegraphing library I'm using, ApexCharts references the `window` in their code */}
+        {/* they have not optimized it properly for react and next js and hance I'm having to do this and the lazy loading above */}
+        {/* I've tried this library for just the second time ig, only because the charts in the Figma design matched a lot with the ones in ApexCharts */}
+        {/* I'll be moving this code to some other well optimized graphing library, but I just went for the fastest option available since it's a timed assignment */}
+        {(typeof window !== 'undefined') && <Chart options={options} series={[{ data: dataSeries }]} />}
       </div>
     </div>
   )

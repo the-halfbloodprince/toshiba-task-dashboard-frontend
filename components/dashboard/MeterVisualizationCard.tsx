@@ -1,8 +1,11 @@
 import React, { FC } from 'react'
 import { MdArrowRightAlt as RightArrowIcon } from "react-icons/md";
-import Chart from 'react-apexcharts'
+// import Chart from 'react-apexcharts'
 import styles from './MeterVisualizationCard.module.scss'
 import { ApexOptions } from 'apexcharts';
+import dynamic from 'next/dynamic'
+
+const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
 type Props = {
   text: string;
@@ -70,7 +73,11 @@ const MeterVisualizationCard: FC<Props> = ({ text, percentage, linkText }) => {
     <div className={styles.container}>
       <h2>Quarter Goal</h2>
       <div className={styles.chartArea}>
-        <Chart options={chartOptions} series={chartSeries} type="radialBar" />
+        {/* I'm having to do this check because thegraphing library I'm using, ApexCharts references the `window` in their code */}
+        {/* they have not optimized it properly for react and next js and hance I'm having to do this and the lazy loading above */}
+        {/* I've tried this library for just the second time ig, only because the charts in the Figma design matched a lot with the ones in ApexCharts */}
+        {/* I'll be moving this code to some other well optimized graphing library, but I just went for the fastest option available since it's a timed assignment */}
+        {(typeof window !== 'undefined') && <Chart options={chartOptions} series={chartSeries} type="radialBar" />}
       </div>
       {/* link */}
       <div className={styles.link}>
