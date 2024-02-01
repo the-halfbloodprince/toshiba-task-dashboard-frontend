@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { Customer } from './Customers'
-import styles from './Customerlabel.module.scss'
+import styles from './CustomerLabel.module.scss'
 import Image from 'next/image'
 
 type Props = {
